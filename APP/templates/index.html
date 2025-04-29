@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de Calefacción</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">🔥 Control de Calefacción</div>
+
+    <div class="card">
+        <h2>📊 HOMEASSISTANT</h2>
+        <p><strong>Temperatura:</strong> {{ temperatura }}°C</p>
+        <p><strong>Humedad:</strong> {{ humedad }}%</p>
+        <p><strong>Corriente:</strong> {{ corriente }} A</p>
+        <p><strong>Estado calefacción:</strong> {{ estado }}</p>
+        <p><strong>Última actualización:</strong> {{ ultima_actualizacion }}</p>
+    </div>
+
+    <div class="buttons">
+        <form method="POST" action="/encender">
+            <button type="submit" class="btn-green">Encender 🔥</button>
+        </form>
+        <form method="POST" action="/apagar">
+            <button type="submit" class="btn-red">Apagar ❄️</button>
+        </form>
+    </div>
+
+    <a href="/graficas" class="section-link graficas">📈 Gráficas</a>
+    <a href="/meteorologia" class="section-link meteorologia">🌦️ Meteorologia</a>
+</body>
+</html>
